@@ -1,0 +1,16 @@
+extends ../layout/layout
+include ../components
+
+block variables
+  - var title = 'test';
+  - var pageClass = 'main';
+
+block content
+  .container
+    include ../modules/header/header
+    main(class=pageClass)
+      .main__wrapper
+        include ../modules/navigation/navigation
+        include ../modules/content
+    include ../modules/footer
+      

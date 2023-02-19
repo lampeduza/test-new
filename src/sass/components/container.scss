@@ -1,0 +1,15 @@
+@use './global/library.scss' as lib;
+
+.container {
+	/* box model */
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 70px;
+	display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  @media (max-width: lib.$tablet) {
+		/* box model */
+		padding: 0 30px;
+	}
+}

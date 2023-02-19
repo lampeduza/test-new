@@ -1,0 +1,49 @@
+@use './global/library.scss' as lib;
+
+.promo {
+	/* colors and fonts */
+	background-color: #dcdcdc;
+	color: #777777;
+
+	/* box model */
+	padding: 20px 30px;
+	margin-bottom: 20px;
+	align-self: start;
+}
+
+.promo__heading {
+	/* fonts */
+	font-size: inherit;
+
+	/* box model */
+	margin-bottom: 30px;
+
+	@media (max-width: lib.$tablet) {
+		/* box model */
+		 margin-bottom: 15px;
+	}
+}
+
+.promo__list {
+	/* mox model */
+	margin: 0 0 30px 50px;
+	list-style-type: square;
+
+	@media (max-width: lib.$tablet) {
+		/* box model */
+		 margin: 0 0 15px 15px;
+	}
+}
+
+.promo__title {
+	/* font styles */
+	font-weight: 700;
+}
+
+
+
+
+
+
+
+

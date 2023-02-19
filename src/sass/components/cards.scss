@@ -1,0 +1,17 @@
+@use './global/library.scss' as lib;
+
+.cards {
+	/* box model */
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+	grid-auto-rows: minmax(auto, 150px);
+	gap: 20px;
+	@include lib.reset-list;
+	grid-column: 2 / -1;
+	margin-bottom: 20px;
+}
+
+.cards__card {
+	/* color */
+	background-color: #dcdcdc;
+}

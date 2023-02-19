@@ -1,0 +1,32 @@
+@use './global/library.scss' as lib;
+
+.additional {
+	/* box model */
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+
+	@media (max-width: lib.$tablet) {
+		/* box model */
+		grid-template-columns: 100%;
+		gap: 30px;
+	}
+}
+
+.additional__article {
+	/* box model */
+	padding: 15px;
+
+	/* color */
+	background-color: #dcdcdc;
+}
+
+.additional__link {
+	/* font */
+	text-decoration: none;
+}
+
+.additional__text {
+	/* color */
+	color: #777777;
+}

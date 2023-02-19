@@ -1,0 +1,39 @@
+/* global */
+@use './global/library.scss';
+@use './global/scaffolding.scss';
+@use './global/visually-hidden.scss';
+@use './global/map.scss';
+
+/* components */
+@use './components/container.scss';
+
+/* HEADER */
+@use './components/header.scss';
+
+/* MAIN */
+@use './components/main.scss';
+
+/* NAVIGATION */
+@use './components/navigation.scss';
+
+/* PROMO */
+@use './components/promo.scss';
+
+/* CARDS */
+@use './components/cards.scss';
+
+/* CONTENT */
+@use './components/content.scss';
+
+/* CONTENT */
+@use './components/additional.scss';
+
+/* FOOTER */
+@use './components/footer.scss';
+
+
+
+
+
+
+

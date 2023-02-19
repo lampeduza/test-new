@@ -1,0 +1,43 @@
+@use './global/library.scss' as lib;
+
+.header {
+	/* mox model */
+	margin-bottom: 25px;
+}
+
+.header__wrapper {
+	/* box model */
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #696969;
+}
+
+.header__list {
+	/* box model */
+	@include lib.reset-list;
+	display: grid;
+	grid-template-columns: 12.5% 29% 1fr;
+	gap: 20px;
+}
+
+.header__item {
+	/* color */
+	background-color: #777777;
+
+	/* box model */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: end;
+	padding: 20px 25px;
+}
+
+.header__text {
+	/* color */
+	color: #ffffff;
+
+	/* font styles */
+	&--number {
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,341 @@
+@use './global/variables.scss' as var;
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin title {
+  font-family: var.$secondary-font;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 400;
+  margin-bottom: 40px;
+
+  @media (max-width: var.$tablet-s) {
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@mixin h3-title {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* BUTTON */
+@mixin button {
+  display: inline-block;
+  font-family: var.$primary-font;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  padding: 20px;
+  min-width: 250px;
+  text-align: center;
+  text-decoration: none;
+
+  @media (max-width: var.$tablet) {
+     min-width: 200px;
+  }
+
+  @media (max-width: var.$tablet) {
+    font-size: 13px;
+    line-height: 13px;
+    padding: 15px;
+    min-width: 170px;
+  }
+}
+
+/* BLACK BUTTON */
+@mixin black-button {
+  $color-white: #ffffff;
+  $background-black: #000000;
+  $background-hover: #505050;
+  $background-pressed: #000000;
+
+  @include button;
+  color: $color-white;
+  background-color: $background-black;
+
+  &:hover {
+    background-color: $background-hover;
+  }
+
+  &:active,
+  &:focus {
+    background-color: $background-pressed;
+  }
+}
+
+/* WHITE BUTTON */
+@mixin white-button {
+  $color-black: #303030;
+  $color-white: #ffffff;
+  $background-white: $color-white;
+  $background-hover: $color-black;
+  $background-pressed: #000000;
+  $border-normal: 1px solid #303030;
+  $border-pressed: 1px solid #000000;
+
+  @include button;
+  color: $color-black;
+  background-color: $background-white;
+  border: $border-normal;
+
+  &:hover {
+    background-color: $background-hover;
+    color: $color-white;
+    border: $border-pressed;
+  }
+
+  &:active,
+  &:focus {
+    background-color: $background-pressed;
+    color: $color-white;
+  }
+}
+
+@mixin tab {
+  $tab-background: #f0f0f0;
+  $tab-color: #303030;
+  $tab-hover-background: #DDDDDD;
+  $tab-pressed-background: $tab-color;
+  $tab-pressed-color: #ffffff;
+
+  font-family: var.$primary-font;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $tab-color;
+  background-color: $tab-background;
+  border: none;
+  padding: 13px 30px;
+  border-radius: 21px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $tab-hover-background;
+  }
+
+  &:focus,
+  &:active {
+    background-color: $tab-pressed-background;
+    color: $tab-pressed-color;
+  }
+
+  @media (max-width: var.$tablet-s) {
+    font-size: 12px;
+    line-height: 12px;
+    padding: 10px 20px;
+  }
+}
+
+
+@mixin tab-current {
+  $tab-current-background: #303030;
+  $tab-current-color: #ffffff;
+
+  &--current {
+    pointer-events: none;
+
+    .tabs__button {
+      color: $tab-current-color;
+      background-color: $tab-current-background;
+    }
+  }
+}
+
+@mixin sale {
+  $background: #5B8A8F;
+  $color: #ffffff;
+
+  content: 'Sale';
+  color: $color;
+  background: $background;
+  font-family: var.$primary-font;
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 500;
+  border-radius: 15px;
+  padding: 4px 12px;
+  position: absolute;
+  top: 16px;
+  left: 24px;
+}
+
+@mixin offer {
+  $color: #ffffff;
+
+  color: $color;
+  font-family: var.$primary-font;
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 500;
+  border-radius: 15px;
+  padding: 4px 12px;
+}
+
+@mixin offer-new {
+  $background: #495159;
+  
+  background: $background;
+}
+
+@mixin offer-hit {
+  $background: #E1A661;
+  
+  background: $background;
+}
+
+@mixin offer-sale {
+  $background: #5B8A8F;
+  
+  background: $background;
+}
+
+@mixin discount {
+  $background: #E24B33;
+  $color: #ffffff;
+
+  color: $color;
+  background-color: $background;
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 15px;
+}
+
+@mixin basic-discount {
+  $color: #ffffff;
+
+  color: $color;
+  font-family: var.$primary-font;
+  font-size: 24px;
+  line-height: 38.4px;
+  font-weight: 600;
+  padding: 0 25px;
+}
+
+@mixin green-discount {
+  $background: #43807F;
+
+  background-color: $background;
+  @include basic-discount;
+}
+
+@mixin red-discount {
+  $background: #E24B33;
+
+  background-color: $background;
+  @include basic-discount;
+}
+
+@mixin orange-discount {
+  $background: #E1A661;
+
+  background-color: $background;
+  @include basic-discount;
+}
+
+@mixin day-product-discount {
+  $color: #ffffff;
+  $background: #E24B33;
+
+  display: inline-block;
+  margin-top: -10px;
+  color: $color;
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 500;
+  background: $background;
+  border-radius: 15px;
+  padding: 4px 8px;
+
+  @media (max-width: var.$tablet) {
+    margin-top: 0; 
+  }
+}
+
+@mixin ring-sizes-component {
+  $color: #303030;
+  $border-color: #DADADA;
+  $border-color-hover: #303030;
+  $background: #ffffff;
+
+  color: $color;
+  font-family: var.$primary-font;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 9px;
+  border: 1px solid $border-color;
+  background-color: $background;
+  min-width: 50px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $border-color-hover;
+  }
+
+  &:active,
+  &:focus {
+    color: #ffffff;
+    background-color: #303030;
+    border: 1px solid #303030;
+  }
+}
+
+// @mixin button {
+//   color: inherit;
+//   font-family: var.$primary-font;
+//   font-size: 14px;
+//   line-height: 14px;
+//   font-weight: 500;
+//   display: block;
+//   padding: 20px;
+//   width: 100%;
+//   text-transform: uppercase;
+//   text-align: center;
+//   border: 1px solid transparent;
+//   cursor: pointer;
+// }
+
+// @mixin black-button {
+//   $color: #ffffff;
+//   $background: #303030;
+
+//   @include button;
+//   color: $color;
+//   background-color: $background;
+// }
+
+// @mixin white-button {
+//   $color: #303030;
+//   $background: #ffffff;
+
+//   @include button;
+//   color: $color;
+//   background-color: $background;
+//   border-color: $color;
+// }
